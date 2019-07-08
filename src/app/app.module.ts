@@ -1,22 +1,31 @@
+import {NgModule} from '@angular/core';
 import {AngularFireModule} from '@angular/fire';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule, Routes} from '@angular/router';
 import {environment} from 'src/environments/environment';
+import {AppComponent} from './app.component';
+import {GameComponent} from './components/game/game.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+const routes: Routes = [{
+  path: 'room/:roomId',
+  component: GameComponent,
+}];
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'realtime-game-123')
-
+    AngularFireModule.initializeApp(environment.firebase, 'realtime-game-123'),
+    AngularFireDatabaseModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
