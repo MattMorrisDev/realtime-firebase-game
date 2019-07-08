@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'firebase-project';
+  title = 'realtime-firebase-game';
 
   constructor() {
 

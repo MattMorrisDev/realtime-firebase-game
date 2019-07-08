@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "firebase-project": {
+    "realtime-firebase-game": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/firebase-project",
+            "outputPath": "dist/realtime-firebase-game",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "firebase-project:build"
+            "browserTarget": "realtime-firebase-game:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "firebase-project:build:production"
+              "browserTarget": "realtime-firebase-game:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "firebase-project:build"
+            "browserTarget": "realtime-firebase-game:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "firebase-project:serve"
+            "devServerTarget": "realtime-firebase-game:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "firebase-project:serve:production"
+              "devServerTarget": "realtime-firebase-game:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "firebase-project"
+  "defaultProject": "realtime-firebase-game"
 }
