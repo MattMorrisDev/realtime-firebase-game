@@ -1,18 +1,11 @@
-<div>Playing in room: {{roomId}}</div>
-<div>Player coords: {{  playerCoords.row + ', ' + playerCoords.col }}</div>
-<button (click)="updateDB()">Update DB</button>
+<h1 class="room-title">Playing in room: {{ roomId }}</h1>
+<div>Your current position: {{ playerCoords.row + ", " + playerCoords.col }}</div>
 
-
-<div>All players:</div>
+<div>All players positions</div>
 <ul>
-  <li *ngFor="let player of allPlayers | async">
-    {{ player | json }}
-  </li>
+   <li *ngFor="let player of allPlayers | async">row: {{ player.row }} col: {{ player.col }}</li>
 </ul>
 
-
 <div class="grid" [ngStyle]="gridStyles">
-  <div *ngFor="let cell of gridCells; let index = $index" class="cell">
-<!--    {{index}}-->
-  </div>
+   <div *ngFor="let cell of gridCells" class="cell" [class.cell-active]="cell"></div>
 </div>
